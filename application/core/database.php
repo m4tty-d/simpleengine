@@ -15,12 +15,18 @@ class Database {
         if( !isset(self::$db_instance) ) {
 
             $options = array(
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ
             );
+            try {
 
-            self::$db_instance = new PDO(DB_TYPE . ':host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS, $options);
+                self::$db_instance = new PDO(DB_TYPE . ':host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS, $options);
 
+            } catch(PDOException $e) {
+
+                die("Database connection failed: " . $e->getMessage());
+
+            }
         }
 
         return self::$db_instance;

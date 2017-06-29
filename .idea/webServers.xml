@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="71336283-5361-4626-9cdc-568a4cddbc12" name="szerver" url="http://192.168.0.35/simpleengine/">
+        <fileTransfer host="192.168.0.35" port="22" rootFolder="/var/www/simpleengine" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

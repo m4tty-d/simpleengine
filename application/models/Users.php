@@ -1,7 +1,12 @@
 <?php
 
-require_once('../core/database.php');
+require('BaseModel.php');
 
-class Users {
+class Users extends BaseModel {
+
+    public function __construct() {
+        parent::__construct();
+        $this->setTableName("users");
+    }
 
 }
